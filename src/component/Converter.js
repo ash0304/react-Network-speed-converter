@@ -18,9 +18,9 @@ const UnitControl = () => {
     )
 }
 
-const CardFooter = () => {
-    // STEP 1 : inputValue 為使用者輸入的數值，先預設30，之後會已資料傳送代替
-    let inputValue = 30;
+const CardFooter = (props) => {
+    // STEP 1 : 透過props接收父層輸入框資料
+    const { inputValue } = props;
     // STEP 2: 定義 criteria 物件
     let criteria;
     // STEP 3: 根據 inputValue 改變要顯示的內容與顏色
@@ -84,7 +84,7 @@ const Converter = () => {
                     </div>
                 </div>
             </div>
-            <CardFooter />
+            <CardFooter inputValue={inputValue} />
         </div>
     )
 }
